@@ -1,9 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+:root{
+    --key-color: rgb(0, 255, 221);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-family: 'Roboto Mono', monospace; */
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(1,1,1,0.9),rgba(1,1,1,0.9)), url(resources/bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar{
+    display: flex;
+    padding: 25px 50px;
+    align-items: center;
+}
+
+.navbar h1{
+    color: #fff;
+    border-left: 2px solid var(--key-color);
+    padding-left: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 25px;
+}
+
+.navbar ul{
+    list-style: none;
+    flex: 1;
+    text-align: right;
+}
+
+.navbar ul li{
+    display: inline;
+    margin: 10px 15px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    display: inline;
+    color: #fff;
+    font-weight: 600;
+}
+
+#primary{
+    color:  #111;
+    border-radius: 15px;
+    background: var(--key-color);
+    padding: 8px 15px;
+}
+#primary:hover{
+    letter-spacing: 1.5px;
+    transition: 1s;
+}
+
+.content{
+    margin-top: 7%;
+}
+
+.hero{
+    padding: 5% 10%;
+}
+
+.hero h1{
+    color: #fff;
+}
+
+.hero span{
+    color: var(--key-color);
+}
+
+.hero p{
+    margin-top: 19px;
+    color: #fff;
     font-family: 'Roboto Mono', monospace;
 }
 
+.hero .links{
+    margin-top: 25px;
+}
+
+.hero .links a{
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 8px 15px;
+    font-weight: 500;
+    background-color: var(--key-color);
+    width: 40px;
+    color: black
+}
+
+.hero .links a:hover{
+    letter-spacing: 0.5px;
+    transition: 1s;
+}
+
+#secondary{
+    background-color: #fff;
+    margin-left: 20px;
+    padding: 8px 25px;
+}
