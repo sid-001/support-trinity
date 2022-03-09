@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 :root{
-    --key-color: rgb(0, 255, 221);
+    --key-color: #009688;
 }
 
 *{
@@ -11,101 +11,151 @@
     /* font-family: 'Roboto Mono', monospace; */
 }
 
-.container{
+.banner{
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(rgba(1,1,1,0.9),rgba(1,1,1,0.9)), url(resources/bg.png);
+    background: linear-gradient(rgba(1,1,1,0.95),rgba(1,1,1,0.95)), url(resources/bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .navbar{
+    width: 85%;
+    margin: auto;
+    padding: 30px 0;
     display: flex;
-    padding: 25px 50px;
     align-items: center;
+    justify-content: space-between;
 }
 
-.navbar h1{
-    color: #fff;
-    border-left: 2px solid var(--key-color);
-    padding-left: 8px;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 25px;
-}
-
-.navbar ul{
-    list-style: none;
-    flex: 1;
-    text-align: right;
+.logo{
+    color: var(--key-color);
 }
 
 .navbar ul li{
-    display: inline;
-    margin: 10px 15px;
+    list-style: none;
+    display: inline-block;
+    margin: 0px 20px;
+    position: relative;
 }
 
 .navbar ul li a{
     text-decoration: none;
-    display: inline;
     color: #fff;
-    font-weight: 600;
+    text-transform: uppercase;
 }
 
-#primary{
-    color:  #111;
-    border-radius: 15px;
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
     background: var(--key-color);
-    padding: 8px 15px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.7s;
 }
-#primary:hover{
-    letter-spacing: 1.5px;
-    transition: 1s;
+
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.menu{
+    display: none;
 }
 
 .content{
-    margin-top: 7%;
-}
-
-.hero{
-    padding: 5% 10%;
-}
-
-.hero h1{
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50);
+    text-align: center;
     color: #fff;
 }
 
-.hero span{
+.content span{
     color: var(--key-color);
 }
 
-.hero p{
-    margin-top: 19px;
-    color: #fff;
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
     font-family: 'Roboto Mono', monospace;
 }
 
-.hero .links{
-    margin-top: 25px;
+.button{
+    margin-top: 45px;
 }
 
-.hero .links a{
+.button a{
+    padding: 10px 25px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid var(--key-color);
+    color: #fff;
     text-decoration: none;
-    border-radius: 15px;
-    padding: 8px 15px;
-    font-weight: 500;
-    background-color: var(--key-color);
-    width: 40px;
-    color: black
+}
+.button a:hover{
+   background: var(--key-color);
+   transition: 0.7s;
 }
 
-.hero .links a:hover{
-    letter-spacing: 0.5px;
-    transition: 1s;
+#primary{
+    background: var(--key-color);
 }
 
-#secondary{
-    background-color: #fff;
-    margin-left: 20px;
-    padding: 8px 25px;
+#primary:hover{
+    letter-spacing: 1.5px;
+    transition: 0.7s;
+}
+
+@media only screen and (max-width:700px){
+    .navbar ul{
+        display: none;
+    }
+
+    .menu{
+        display: block;
+        filter: invert(1);
+    }
+
+    .content{
+        top: 28%;
+    }
+    .content h1{
+        font-size: 40px;
+        margin-top: 80px;
+    }
+    .content p{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-height: 575.98px) and (orientation: landscape){
+    .content{
+        top: 10%;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .content h1{
+        font-size: 40px;
+        margin-top: 80px;
+    }
+    
+    .content p{
+        width: 80%;
+    }
 }
